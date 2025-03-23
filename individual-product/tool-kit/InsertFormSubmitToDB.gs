@@ -1,6 +1,9 @@
 /**
  * フォームから回答が送信されてスプレッドシートに登録された時の処理
  * 専用の DB シートへ回答データを格納する
+ * 
+ * 難読化設定: Midium
+ * https://obfuscator.io/
  */
 function insertFormSubmitToDB(e) {
   const conf = config();

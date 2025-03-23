@@ -1,3 +1,7 @@
+/**
+ * 難読化設定: Midium
+ * https://obfuscator.io/
+ */
 class Database {
 
   constructor() {

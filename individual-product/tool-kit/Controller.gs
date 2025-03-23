@@ -1,5 +1,8 @@
 /**
  * スプレッドシートを開いた時の処理
+ * 
+ * 難読化設定: Midium
+ * https://obfuscator.io/
  */
 function onOpen(e) {
   // 専用のメニューバーを表示

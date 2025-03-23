@@ -1,3 +1,9 @@
+/**
+ * データベース（DB）のデータおよびフォームの回答履歴を削除
+ * 
+ * 難読化設定: Midium
+ * https://obfuscator.io/
+ */
 function deleteAllDatabaseData() {
   const conf = config();
   const mdl = new Model();

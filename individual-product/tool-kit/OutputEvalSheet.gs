@@ -1,5 +1,8 @@
 /**
  * 評価結果シートに該当する評価データを出力する
+ * 
+ * 難読化設定: Midium
+ * https://obfuscator.io/
  */
 function updateEvalSheet(candidateName, evaluatorName, intervewDate) {
   const conf = config();
