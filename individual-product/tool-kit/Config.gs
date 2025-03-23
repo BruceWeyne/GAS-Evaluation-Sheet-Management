@@ -3,6 +3,8 @@
  * [例]
  * const conf = config();
  * return conf.settingAsYouLike;
+ * 難読化設定: Midium
+ * https://obfuscator.io/
  */
 function config() {
   this.spreadsheetId = ""; // Spreadsheet ID: Default Database
