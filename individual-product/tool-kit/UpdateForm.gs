@@ -155,7 +155,6 @@ function rebuildFormList(form, formList) {
   // 面接日（日時選択）
   form.addDateItem()
     .setTitle(conf.headerInterviewDate)
-    .setHelpText("面接の予定日時を選択してください。")
     .setRequired(true);
 
   // 候補者の氏名（テキスト入力）
@@ -172,14 +171,24 @@ function rebuildFormList(form, formList) {
   let categoryAndList = {};
   let category_prev;
   formList.forEach(item => {
+    // 値の取得
+    let listObj = {};
     let category = item[conf.headerCategory];
     let list = item[conf.headerEvalList];
+    let helpText = item[conf.headerHelpText];
 
+    // 項目を加工
+    listObj = {
+      [conf.headerEvalList]: list,
+      [conf.headerHelpText]: helpText
+    };
+
+    // カテゴリーの重複状況で処理を分岐
     if (category === category_prev) {
-      categoryAndList[category].push(list);
+      categoryAndList[category].push(listObj);
     } else {
       categoryAndList[category] = [];
-      categoryAndList[category].push(list);
+      categoryAndList[category].push(listObj);
     }
     category_prev = category;
   });
@@ -197,7 +206,8 @@ function rebuildFormList(form, formList) {
     let lists = categoryAndList[key];
     lists.forEach(list => {
       form.addScaleItem()
-          .setTitle(list)
+          .setTitle(list[conf.headerEvalList])
+          .setHelpText(list[conf.headerHelpText])
           .setBounds(0, 5) // 1〜5のスケール
           .setLabels(conf.formTitleLowEval, conf.formTitlehighEval) // 下限上限のラベル
           .setRequired(true);

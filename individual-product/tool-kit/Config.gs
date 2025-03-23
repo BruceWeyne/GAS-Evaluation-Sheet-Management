@@ -49,6 +49,7 @@ function config() {
   this.headerResponseId = '回答ID';
   this.headerCategory = '分類';
   this.headerDisplaySort = '表示順';
+  this.headerHelpText = '補足説明（任意）';
 
   this.cellAreaLoadingMssg = 'B6';
   this.cellAreaCandidateName = 'B2';
