@@ -19,10 +19,6 @@ function config() {
   this.evaluatorNameTitle = '面接官氏名';
 
   this.evalResultListStartRow = 6;
-  this.candidateNameRow = 2;
-  this.candidateNameCol = 2;
-  this.evaluatorNameRow = 3;
-  this.evaluatorNameCol = 2;
   this.extraEvalStartCol = 4;
   this.extraEvalMergeCol = 6;
   
@@ -89,13 +85,14 @@ function config() {
   this.formTitlehighEval = '高評価';
   this.formTitleBasicInfo = '基本情報の入力';
   this.formTitleLastDescr = 'ご回答ありがとうござます。';
-  this.formTitleExtraEval = 'その他、特記事項';
-  this.formTitleGoodOrConcern = '良い点または懸念点';
+  this.formTitleExtraEval = 'その他';
+  this.formTitleExtraComment = 'に関する特記事項';
 
-  this.formDescrFirstExp = 'この度は採用活動にご協力いただき誠にありがとうございます。\n\nこちらに面接を行った候補者の評価を記入してください。\n\n記入が完了しデータを送信した後、メールアドレスに回答結果が送信されますので、\n面接官どうしで採用可否の議論をする際の参考としてください。\n\nそれでは、よろしくお願いいたします。';
+  this.formDescrFirstExp = 'この度は採用活動にご協力いただき誠にありがとうございます。\n\nこちらに面接を行った候補者の評価を記入してください。\n\n記入が完了しデータを送信した後、\n面接官どうしで採用可否の議論をする際の参考としてください。\n\nそれでは、よろしくお願いいたします。';
   this.formDescrRvalRule = '【加点方式】\n\n0: 全く評価できない\n\n1: 多少評価できる\n\n2: 問題ない\n\n3: 良い所が目立つ\n\n4: とても評価できる\n\n5: 最高に評価できる';
   this.formDescrLastExp = '以下の【送信】ボタンを押して回答を完了してください。\n\n後ほど、メールアドレスに回答結果が届きます。\nそちらを参考に採用可否の議論をお願いします。';
-  this.formDescrExtraEval = '次の面接官へ引き継ぎをする際に有効です。';
+  this.formDescrExtraEval = '評価項目以外に評価したい事柄や懸念事項などがあればご記載ください。';
+  this.formDescrExtraComment = '評価内容について追記されたい事柄があればお書きください。';
 
   this.cellMemoEvalRules = '【加点方式】\n0: まったく評価できない\n1: 多少評価できる\n2: 問題ない\n3: 良い所が目立つ\n4: とても評価できる\n5: 最高に評価できる';
 

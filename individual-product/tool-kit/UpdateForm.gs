@@ -212,6 +212,12 @@ function rebuildFormList(form, formList) {
           .setLabels(conf.formTitleLowEval, conf.formTitlehighEval) // 下限上限のラベル
           .setRequired(true);
     });
+    // 各分類の特記事項を追加
+    // 設問の構築
+    form.addParagraphTextItem()
+        .setTitle(key + conf.formTitleExtraComment)
+        .setHelpText(conf.formDescrExtraComment);
+
   });
 
   // その他、特記事項の構築
@@ -220,7 +226,7 @@ function rebuildFormList(form, formList) {
       .setHelpText(conf.formDescrExtraEval);
   // 設問の構築
   form.addParagraphTextItem()
-      .setTitle(formTitleGoodOrConcern)
+      .setTitle(formTitleExtraEval + conf.formTitleExtraComment);
 
   // 最後の説明を追加
   form.addPageBreakItem()

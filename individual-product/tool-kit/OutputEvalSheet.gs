@@ -128,8 +128,11 @@ function updateEvalSheet(candidateName, evaluatorName, intervewDate) {
   range.setBorder(true, true, true, true, false, false, "black", SpreadsheetApp.BorderStyle.SOLID);
   range.setHorizontalAlignment('left');
   range.setVerticalAlignment('top');
+  // 出力する値の整理
+  const extraEvalsObj = extractExtraEvals(settingData, listValues, countMap);
+  const extraEvalsText = arrangeExtraEvalsToOutputText(extraEvalsObj);
   // 値の出力
-  range.setValue(listValues[conf.formTitleGoodOrConcern]);
+  range.setValue(extraEvalsText);
 }
 
 
@@ -181,4 +184,56 @@ function setConditionalFormat(targetSheet) {
   rules.push(ruleforFive, ruleforFour, ruleforThree, ruleforTwo, ruleforOne, ruleforZero);
   // 書式の割り当て
   targetSheet.setConditionalFormatRules(rules);
+}
+
+
+/**
+ * 特記事項の抽出
+ */
+function extractExtraEvals(settingData, listValues, countMap) {
+  const conf = config();
+
+  // 出力する値の整理
+  // 特記事項のみを抽出するため、除外したい評価項目のキーを抽出
+  let keysToRemove = new Set(settingData.map(item => item[conf.headerEvalList]));
+  // `listValues` のキーをチェックして、`keysToRemove` に含まれないものだけを残す
+  let filteredListValues = Object.fromEntries(
+    Object.entries(listValues).filter(([key]) => !keysToRemove.has(key))
+  );
+
+  // filteredListValues のキーを配列化し、countMap の順番にソート
+  let sortedEntries = Object.entries(filteredListValues).sort((a, b) => {
+    let aKeyMatch = Object.keys(countMap).find(key => a[0].includes(key)) || "";
+    let bKeyMatch = Object.keys(countMap).find(key => b[0].includes(key)) || "";
+    // 一致しない場合は Infinity を代入して、countMap のキーがあるものを先に並べる
+    let aIndex = aKeyMatch ? Object.keys(countMap).indexOf(aKeyMatch) : Infinity;
+    let bIndex = bKeyMatch ? Object.keys(countMap).indexOf(bKeyMatch) : Infinity;
+    return aIndex - bIndex;
+  });
+
+  // ソート後、オブジェクトに戻す
+  let sortedFilteredListValues = Object.fromEntries(sortedEntries);
+
+  return sortedFilteredListValues;
+}
+
+
+/**
+ * 特記事項を出力用のテキストに加工
+ */
+function arrangeExtraEvalsToOutputText(extraEvalsObj) {
+  let outputTextExtraEvals = '';
+  let count = 0;
+  Object.keys(extraEvalsObj).forEach(key => {
+    // 改行の制御
+    if (count === 0) { // １つめは1行だけ
+      outputTextExtraEvals += '\n';
+    } else { // それ以降は2行の空行を設定
+      outputTextExtraEvals += '\n\n\n';
+    }
+    // 出力テキストの加工と追加
+    outputTextExtraEvals += '【' + key + '】' + '\n' + extraEvalsObj[key];
+    count++;
+  });
+  return outputTextExtraEvals;
 }
