@@ -25,6 +25,7 @@ function config() {
   this.nameOnFormSubmit = 'onFormSubmit';
   this.nameOnSpreadsheetEdit = 'onSpreadsheetEdit';
   
+  this.sheetNameTermsOfService= '利用規約';
   this.sheetNameEvalResult = '評価結果';
   this.sheetNameEvalResultDB = '採用評価結果DB';
   this.sheetNameFormSubmit = 'フォーム送信';
@@ -47,6 +48,7 @@ function config() {
   this.headerDisplaySort = '表示順';
   this.headerHelpText = '補足説明（任意）';
 
+  this.cellAreaTermsText = 'A1';
   this.cellAreaLoadingMssg = 'B6';
   this.cellAreaCandidateName = 'B2';
   this.cellAreaEvaluatorName = 'B3';
@@ -65,6 +67,7 @@ function config() {
   this.menuNameStartFirstSetting = '■ 初期設定を開始';
   this.menuNameStartFormUpdate = '■ 採用評価フォームを更新';
   this.menuNameDeleteDBData = '■ 回答履歴の削除';
+  this.menuNameTermsOfService = '■ 利用規約';
 
   this.mssgFirstSettingTitle = '初期設定';
   this.mssgFormUpdateTitle = 'フォーム更新';
@@ -91,10 +94,14 @@ function config() {
   this.formDescrFirstExp = 'この度は採用活動にご協力いただき誠にありがとうございます。\n\nこちらに面接を行った候補者の評価を記入してください。\n\n記入が完了しデータを送信した後、\n面接官どうしで採用可否の議論をする際の参考としてください。\n\nそれでは、よろしくお願いいたします。';
   this.formDescrRvalRule = '【加点方式】\n\n0: 全く評価できない\n\n1: 多少評価できる\n\n2: 問題ない\n\n3: 良い所が目立つ\n\n4: とても評価できる\n\n5: 最高に評価できる';
   this.formDescrLastExp = '以下の【送信】ボタンを押して回答を完了してください。\n\n後ほど、メールアドレスに回答結果が届きます。\nそちらを参考に採用可否の議論をお願いします。';
-  this.formDescrExtraEval = '評価項目以外に評価したい事柄や懸念事項などがあればご記載ください。';
-  this.formDescrExtraComment = '評価内容について追記されたい事柄があればお書きください。';
+  this.formDescrExtraEval = '評価項目以外に評価したい事柄や懸念事項などがあればご記載ください';
+  this.formDescrExtraComment = '評価内容について追記されたい事柄があればお書きください';
 
   this.cellMemoEvalRules = '【加点方式】\n0: まったく評価できない\n1: 多少評価できる\n2: 問題ない\n3: 良い所が目立つ\n4: とても評価できる\n5: 最高に評価できる';
+
+  this.protectDescrTermOfService = '利用規約シートの保護';
+  
+  this.termsOfServiceDescr = '\n本コンテンツは、個人および商業利用を目的として提供されていますが、以下の行為は固く禁じます。\n\n・本コンテンツの転売、再販、または他者への再配布\n・本コンテンツを無断で改変、転用、または他の製品やサービスに組み込むこと\n\n商業利用においても、コンテンツの改変や再配布を行わない限り、利用は許可されています。\n利用者は、上記の禁止事項を遵守する必要があります。\n違反した場合、法的措置を取る可能性があります。\n\n\nPiklus Inc.\n\n© Piklus All Rights Reserved';
 
   return this; 
 }

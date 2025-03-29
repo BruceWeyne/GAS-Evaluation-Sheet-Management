@@ -7,6 +7,8 @@
 function onOpen(e) {
   // 専用のメニューバーを表示
   displayEvalSheetMenu();
+  // 利用規約を設定
+  createTermsSheet();
 }
 
 
