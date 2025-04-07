@@ -27,7 +27,7 @@ function config() {
   
   this.sheetNameTermsOfService= '利用規約';
   this.sheetNameEvalResult = '評価結果';
-  this.sheetNameEvalResultDB = '採用評価結果DB';
+  this.sheetNameEvalResultDB = '面接評価結果DB';
   this.sheetNameFormSubmit = 'フォーム送信';
   this.sheetNameEvalListSetting = '評価項目設定';
   this.sheetNameFormBuildHistoryDB = 'フォーム構築履歴DB';
@@ -60,12 +60,12 @@ function config() {
   this.cellAreaImportance = '';
   this.cellAreaRecruitCategory = 'E2';
 
-  this.fileNameFormNew = '採用評価フォーム';
-  this.fileNameFormOld = 'old_採用評価フォーム';
+  this.fileNameFormNew = '面接評価フォーム';
+  this.fileNameFormOld = 'old_面接評価フォーム';
 
-  this.menuNameEvalSheetManage = '∴ 採用評価シート管理';
+  this.menuNameEvalSheetManage = '∴ 面接評価シート管理';
   this.menuNameStartFirstSetting = '■ 初期設定を開始';
-  this.menuNameStartFormUpdate = '■ 採用評価フォームを更新';
+  this.menuNameStartFormUpdate = '■ 面接評価フォームを更新';
   this.menuNameDeleteDBData = '■ 回答履歴の削除';
   this.menuNameTermsOfService = '■ 利用規約';
 
