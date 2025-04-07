@@ -24,6 +24,14 @@ function updateFormAction() {
     { key: conf.headerDisplaySort + ' !==', value: '' } // 数式による空欄を除外
   ];
   const editedFormData = mdl.getData(conf.sheetNameEvalListSetting, conditions);
+  
+  // 評価項目が設定されていなければ処理終了
+  if (editedFormData.length <= 1) { // ヘッダーのみが出力されるため
+    // メッセージを表示して処理終了
+    ui.alert(conf.mssgFormUpdateTitle, conf.mssgFormUpdateListEmpty, ui.ButtonSet.OK);
+    return;
+  }
+  
   // DB 格納用にデータを加工（タイムスタンプの追加）
   const arrangedFormData = editedFormData.map(obj => ({
     ...obj,

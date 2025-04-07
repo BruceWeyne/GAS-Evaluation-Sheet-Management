@@ -74,7 +74,8 @@ function config() {
   this.mssgFristSettingStarted = '初期設定を開始します。よろしいですか？';
   this.mssgFirstSettingFinished = '初期設定が完了しました。';
   this.mssgFirstSettingAlreadyDone = '初期設定は既に完了しています。';
-  this.mssgFormUpdateStarted = '「' + this.sheetNameEvalListSetting + '」シートの内容に従ってフォームを更新します。\n開始するには「OK」を押してください。\n\n※この処理には１分程度かかります。';
+  this.mssgFormUpdateStarted = '「' + this.sheetNameEvalListSetting + '」シートの内容に従ってフォームを更新します。\n開始するには「OK」を押してください。\n\n※この処理には1分程度かかります。';
+  this.mssgFormUpdateListEmpty = '評価項目が設定されていません。\n1つ以上の項目を設定してください。';
   this.mssgFormUpdateFinished = 'フォームが最新の設定情報に更新されました。\n\n※既存の「フォームの回答」シートがある場合は削除しても問題ありません。';
   this.mssgLoading = 'Loading...';
   this.mssgNotHitEvalResult = '該当の評価結果がありません\n適切な 候補者 / 面接官 / 面接日 を選択してください';
