@@ -39,3 +39,14 @@ function createTermsSheet() {
   // シートの保護を警告のみ設定（編集不可、警告のみ）
   protection.setWarningOnly(true); // 他のユーザーには編集不可の警告を表示
 }
+
+
+/**
+ * 利用規約の表示
+ */
+function displayTermsOfService() {
+  const conf = config();
+  // 利用規約の表示
+  const ui = SpreadsheetApp.getUi();
+  ui.alert(conf.sheetNameTermsOfService, conf.termsOfServiceDescr, ui.ButtonSet.OK);
+}
